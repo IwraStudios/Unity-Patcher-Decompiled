@@ -1319,18 +1319,6 @@ public class Form1 : Form
 		}
 	}
 
-	[DllImport("kernel32", CharSet = CharSet.Ansi, ExactSpelling = true, SetLastError = true)]
-	private static extern long IsDebuggerPresent();
-
-	[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-	private void Form_Load()
-	{
-		if (Form1.IsDebuggerPresent() != 0L)
-		{
-			ProjectData.EndApp();
-		}
-	}
-
 	private void Button5_Click(object sender, EventArgs e)
 	{
 		MyProject.Forms.Form2.ShowDialog(this);
